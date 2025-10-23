@@ -1,0 +1,49 @@
+{
+  "title": "AI Model Benchmark Leaderboard",
+  "description": "AI模型性能排行榜",
+  "version": "1.0.0",
+  "author": "Your Name",
+  "settings": {
+    "defaultSort": "score",
+    "defaultOrder": "desc",
+    "itemsPerPage": 50,
+    "showStats": true,
+    "enableSearch": true,
+    "enableExport": true
+  },
+  "columns": {
+    "rank": {
+      "label": "排名",
+      "sortable": true,
+      "width": "60px"
+    },
+    "model": {
+      "label": "模型",
+      "sortable": true,
+      "width": "auto"
+    },
+    "score": {
+      "label": "分数",
+      "sortable": true,
+      "width": "100px",
+      "format": "decimal"
+    },
+    "org": {
+      "label": "组织",
+      "sortable": true,
+      "width": "150px"
+    },
+    "date": {
+      "label": "日期",
+      "sortable": true,
+      "width": "120px",
+      "format": "date"
+    }
+  },
+  "theme": {
+    "primaryColor": "#667eea",
+    "secondaryColor": "#764ba2",
+    "backgroundColor": "#ffffff",
+    "textColor": "#2c3e50"
+  }
+}

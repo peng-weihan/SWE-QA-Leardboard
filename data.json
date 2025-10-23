@@ -1,0 +1,122 @@
+[
+  {
+    "model": "GPT-4o",
+    "score": 95.8,
+    "org": "OpenAI",
+    "date": "2024-05-13"
+  },
+  {
+    "model": "Claude-3.5 Sonnet",
+    "score": 95.2,
+    "org": "Anthropic",
+    "date": "2024-06-20"
+  },
+  {
+    "model": "Gemini 1.5 Pro",
+    "score": 94.5,
+    "org": "Google",
+    "date": "2024-02-15"
+  },
+  {
+    "model": "GPT-4 Turbo",
+    "score": 94.1,
+    "org": "OpenAI",
+    "date": "2023-11-06"
+  },
+  {
+    "model": "Claude-3 Opus",
+    "score": 93.7,
+    "org": "Anthropic",
+    "date": "2024-03-04"
+  },
+  {
+    "model": "Gemini 1.0 Pro",
+    "score": 92.3,
+    "org": "Google",
+    "date": "2023-12-06"
+  },
+  {
+    "model": "LLaMA-3 70B",
+    "score": 91.8,
+    "org": "Meta",
+    "date": "2024-04-18"
+  },
+  {
+    "model": "ChatGLM-4",
+    "score": 90.5,
+    "org": "Zhipu AI",
+    "date": "2024-01-22"
+  },
+  {
+    "model": "Qwen-2.5 72B",
+    "score": 89.7,
+    "org": "Alibaba",
+    "date": "2024-09-25"
+  },
+  {
+    "model": "PaLM-2",
+    "score": 88.9,
+    "org": "Google",
+    "date": "2023-05-10"
+  },
+  {
+    "model": "Baichuan-2 192B",
+    "score": 88.2,
+    "org": "Baichuan",
+    "date": "2024-01-28"
+  },
+  {
+    "model": "LLaMA-2 70B",
+    "score": 87.6,
+    "org": "Meta",
+    "date": "2023-07-18"
+  },
+  {
+    "model": "ChatGLM-3 32B",
+    "score": 86.8,
+    "org": "Zhipu AI",
+    "date": "2023-10-27"
+  },
+  {
+    "model": "Qwen-2 72B",
+    "score": 86.1,
+    "org": "Alibaba",
+    "date": "2024-01-25"
+  },
+  {
+    "model": "Baichuan-2 13B",
+    "score": 85.4,
+    "org": "Baichuan",
+    "date": "2023-09-07"
+  },
+  {
+    "model": "LLaMA-3 8B",
+    "score": 84.7,
+    "org": "Meta",
+    "date": "2024-04-18"
+  },
+  {
+    "model": "Mistral-7B",
+    "score": 83.9,
+    "org": "Mistral AI",
+    "date": "2023-09-27"
+  },
+  {
+    "model": "Yi-34B",
+    "score": 83.2,
+    "org": "01.AI",
+    "date": "2023-11-02"
+  },
+  {
+    "model": "LLaMA-2 13B",
+    "score": 82.5,
+    "org": "Meta",
+    "date": "2023-07-18"
+  },
+  {
+    "model": "ChatGLM-2 6B",
+    "score": 81.8,
+    "org": "Zhipu AI",
+    "date": "2023-06-25"
+  }
+]

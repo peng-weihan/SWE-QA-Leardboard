@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Model Benchmark Leaderboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏆 Benchmark Leaderboard</h1>
+            <p>AI模型性能排行榜</p>
+        </div>
+
+        <div class="controls">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="搜索模型名称或组织...">
+            </div>
+            <div class="sort-controls">
+                <select id="sortBy">
+                    <option value="score">按分数排序</option>
+                    <option value="date">按日期排序</option>
+                    <option value="model">按模型名称排序</option>
+                    <option value="org">按组织排序</option>
+                </select>
+                <select id="sortOrder">
+                    <option value="desc">降序</option>
+                    <option value="asc">升序</option>
+                </select>
+                <button class="sort-btn" onclick="applySorting()">应用排序</button>
+            </div>
+        </div>
+
+        <div class="leaderboard">
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="sortable" data-column="rank">排名</th>
+                            <th class="sortable" data-column="model">模型</th>
+                            <th class="sortable" data-column="score">分数</th>
+                            <th class="sortable" data-column="org">组织</th>
+                            <th class="sortable" data-column="date">日期</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboardTable">
+                        <!-- 数据将通过JavaScript动态加载 -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number" id="totalModels">0</div>
+                <div class="stat-label">总模型数</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="avgScore">0</div>
+                <div class="stat-label">平均分数</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="topScore">0</div>
+                <div class="stat-label">最高分数</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="totalOrgs">0</div>
+                <div class="stat-label">参与组织</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

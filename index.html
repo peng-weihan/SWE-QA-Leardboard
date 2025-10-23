@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,17 +10,17 @@
     <div class="container">
         <div class="header">
             <h1>🏆 SWE-QA Benchmark Leaderboard</h1>
-            <p>Software Engineering Question Answering 排行榜</p>
+            <p>Software Engineering Question Answering Leaderboard</p>
         </div>
 
         <div class="description">
             <div class="description-content">
-                <h2>关于SWE-QA Benchmark</h2>
-                <p>理解和推理整个软件仓库是智能软件工程工具的基本能力。虽然现有的基准测试如CoSQA和CodeQA已经推进了该领域的发展，但它们主要关注小的、自包含的代码片段。这些设置无法捕捉真实世界仓库的复杂性，其中有效的理解和推理通常需要导航多个文件、理解软件架构，并在长距离代码依赖中建立答案基础。</p>
+                <h2>About SWE-QA Benchmark</h2>
+                <p>Understanding and reasoning about entire software repositories is an essential capability for intelligent software engineering tools. While existing benchmarks such as CoSQA and CodeQA have advanced the field, they predominantly focus on small, self-contained code snippets. These setups fail to capture the complexity of real-world repositories, where effective understanding and reasoning often require navigating multiple files, understanding software architecture, and grounding answers in long-range code dependencies.</p>
                 
-                <p>SWE-QA是一个仓库级代码问答基准测试，旨在促进在真实代码环境中自动化问答系统的研究。SWE-QA包含576个高质量的问题-答案对，涵盖多样化的类别，包括意图理解、跨文件推理和多跳依赖分析。</p>
+                <p>SWE-QA is a repository-level code question answering (QA) benchmark designed to facilitate research on automated QA systems in realistic code environments. SWE-QA involves 576 high-quality question-answer pairs spanning diverse categories, including intention understanding, cross-file reasoning, and multi-hop dependency analysis.</p>
                 
-                <p>该基准测试基于从11个流行仓库的77,100个GitHub问题中提取的自然开发者问题构建，涵盖以下Python库：</p>
+                <p>The benchmark is constructed based on naturally occurring developer questions extracted from 77,100 GitHub issues from 11 popular repositories, covering the following Python libraries:</p>
                 <div class="libraries">
                     <span class="library-tag">astropy</span>
                     <span class="library-tag">django</span>
@@ -36,30 +36,30 @@
                     <span class="library-tag">sympy</span>
                 </div>
                 
-                <p>每个问题都经过精心设计，测试模型对软件工程概念、API使用、架构设计等方面的理解能力，特别强调跨文件推理和仓库级理解。</p>
+                <p>Each question is carefully designed to test models' understanding of software engineering concepts, API usage, architectural design, and more, with particular emphasis on cross-file reasoning and repository-level understanding.</p>
                 <div class="links">
-                    <a href="https://huggingface.co/datasets/swe-qa/SWE-QA-Benchmark" target="_blank" class="link-btn">📊 数据集</a>
-                    <a href="https://arxiv.org/abs/2509.14635" target="_blank" class="link-btn">📄 论文</a>
+                    <a href="https://huggingface.co/datasets/swe-qa/SWE-QA-Benchmark" target="_blank" class="link-btn">📊 Dataset</a>
+                    <a href="https://arxiv.org/abs/2509.14635" target="_blank" class="link-btn">📄 Paper</a>
                 </div>
             </div>
         </div>
 
         <div class="controls">
             <div class="search-box">
-                <input type="text" id="searchInput" placeholder="搜索模型名称或组织...">
+                <input type="text" id="searchInput" placeholder="Search model name or organization...">
             </div>
             <div class="sort-controls">
                 <select id="sortBy">
-                    <option value="score">按分数排序</option>
-                    <option value="date">按日期排序</option>
-                    <option value="model">按模型名称排序</option>
-                    <option value="org">按组织排序</option>
+                    <option value="score">Sort by Score</option>
+                    <option value="date">Sort by Date</option>
+                    <option value="model">Sort by Model</option>
+                    <option value="org">Sort by Organization</option>
                 </select>
                 <select id="sortOrder">
-                    <option value="desc">降序</option>
-                    <option value="asc">升序</option>
+                    <option value="desc">Descending</option>
+                    <option value="asc">Ascending</option>
                 </select>
-                <button class="sort-btn" onclick="applySorting()">应用排序</button>
+                <button class="sort-btn" onclick="applySorting()">Apply Sort</button>
             </div>
         </div>
 
@@ -68,16 +68,16 @@
                 <table>
                     <thead>
                         <tr>
-                            <th class="sortable" data-column="rank">排名</th>
-                            <th class="sortable" data-column="model">模型</th>
-                            <th class="sortable" data-column="score">总分</th>
-                            <th class="sortable" data-column="category">类别</th>
-                            <th class="sortable" data-column="org">组织</th>
-                            <th class="sortable" data-column="date">日期</th>
+                            <th class="sortable" data-column="rank">Rank</th>
+                            <th class="sortable" data-column="model">Model</th>
+                            <th class="sortable" data-column="score">Score</th>
+                            <th class="sortable" data-column="category">Category</th>
+                            <th class="sortable" data-column="org">Organization</th>
+                            <th class="sortable" data-column="date">Date</th>
                         </tr>
                     </thead>
                     <tbody id="leaderboardTable">
-                        <!-- 数据将通过JavaScript动态加载 -->
+                        <!-- Data will be loaded dynamically via JavaScript -->
                     </tbody>
                 </table>
             </div>
@@ -86,23 +86,23 @@
         <div class="stats">
             <div class="stat-card">
                 <div class="stat-number" id="totalModels">0</div>
-                <div class="stat-label">总模型数</div>
+                <div class="stat-label">Total Models</div>
             </div>
             <div class="stat-card">
                 <div class="stat-number" id="avgScore">0</div>
-                <div class="stat-label">平均分数</div>
+                <div class="stat-label">Average Score</div>
             </div>
             <div class="stat-card">
                 <div class="stat-number" id="topScore">0</div>
-                <div class="stat-label">最高分数</div>
+                <div class="stat-label">Top Score</div>
             </div>
             <div class="stat-card">
                 <div class="stat-number" id="totalOrgs">0</div>
-                <div class="stat-label">参与组织</div>
+                <div class="stat-label">Organizations</div>
             </div>
             <div class="stat-card">
                 <div class="stat-number" id="totalCategories">0</div>
-                <div class="stat-label">模型类别</div>
+                <div class="stat-label">Categories</div>
             </div>
         </div>
     </div>

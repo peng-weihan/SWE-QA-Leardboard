@@ -136,7 +136,7 @@ class Leaderboard {
         tbody.innerHTML = '';
 
         if (this.currentData.length === 0) {
-            tbody.innerHTML = '<tr><td colspan="5" class="loading">没有找到匹配的数据</td></tr>';
+            tbody.innerHTML = '<tr><td colspan="6" class="loading">No matching data found</td></tr>';
             return;
         }
 

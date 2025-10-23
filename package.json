@@ -1,7 +1,7 @@
 {
   "name": "swe-qa-leaderboard",
   "version": "1.0.0",
-  "description": "SWE-QA Software Engineering Question Answering 排行榜",
+  "description": "SWE-QA Software Engineering Question Answering Leaderboard",
   "main": "index.html",
   "scripts": {
     "start": "python -m http.server 8000",

@@ -1,139 +1,140 @@
 # SWE-QA Benchmark Leaderboard
 
-一个专门针对软件工程问答(SWE-QA)基准测试的排行榜，支持实时搜索、排序和统计功能。
+A leaderboard specifically designed for Software Engineering Question Answering (SWE-QA) benchmark, supporting real-time search, sorting, and statistical functions.
 
-## 关于SWE-QA
+## About SWE-QA
 
-理解和推理整个软件仓库是智能软件工程工具的基本能力。虽然现有的基准测试如CoSQA和CodeQA已经推进了该领域的发展，但它们主要关注小的、自包含的代码片段。这些设置无法捕捉真实世界仓库的复杂性，其中有效的理解和推理通常需要导航多个文件、理解软件架构，并在长距离代码依赖中建立答案基础。
+Understanding and reasoning about entire software repositories is an essential capability for intelligent software engineering tools. While existing benchmarks such as CoSQA and CodeQA have advanced the field, they predominantly focus on small, self-contained code snippets. These setups fail to capture the complexity of real-world repositories, where effective understanding and reasoning often require navigating multiple files, understanding software architecture, and grounding answers in long-range code dependencies.
 
-SWE-QA是一个仓库级代码问答基准测试，旨在促进在真实代码环境中自动化问答系统的研究。SWE-QA包含576个高质量的问题-答案对，涵盖多样化的类别，包括意图理解、跨文件推理和多跳依赖分析。
+SWE-QA is a repository-level code question answering (QA) benchmark designed to facilitate research on automated QA systems in realistic code environments. SWE-QA involves 576 high-quality question-answer pairs spanning diverse categories, including intention understanding, cross-file reasoning, and multi-hop dependency analysis.
 
-该基准测试基于从11个流行仓库的77,100个GitHub问题中提取的自然开发者问题构建，涵盖以下Python库：astropy、django、flask、matplotlib、pylint、pytest、requests、scikit-learn、sphinx、sqlfluff、xarray、sympy。
+The benchmark is constructed based on naturally occurring developer questions extracted from 77,100 GitHub issues from 11 popular repositories, covering the following Python libraries: astropy, django, flask, matplotlib, pylint, pytest, requests, scikit-learn, sphinx, sqlfluff, xarray, sympy.
 
-- 📊 **数据集**: [Hugging Face SWE-QA-Benchmark](https://huggingface.co/datasets/swe-qa/SWE-QA-Benchmark)
-- 📄 **论文**: [SWE-QA: A Benchmark for Software Engineering Question Answering](https://arxiv.org/abs/2509.14635)
+- 📊 **Dataset**: [Hugging Face SWE-QA-Benchmark](https://huggingface.co/datasets/swe-qa/SWE-QA-Benchmark)
+- 📄 **Paper**: [SWE-QA: A Benchmark for Software Engineering Question Answering](https://arxiv.org/abs/2509.14635)
 
-## 功能特性
+## Features
 
-- 🏆 **排行榜展示** - 清晰展示模型在SWE-QA基准测试上的排名和性能分数
-- 🔍 **实时搜索** - 支持按模型名称或组织搜索
-- 📊 **多维度排序** - 支持按分数、日期、模型名称、组织排序
-- 📈 **统计信息** - 显示总模型数、平均分数、最高分数、参与组织数
-- 🎨 **现代化UI** - 响应式设计，支持移动端和桌面端
-- 📱 **移动端友好** - 自适应布局，完美支持各种屏幕尺寸
+- 🏆 **Leaderboard Display** - Clearly shows model rankings and performance scores on SWE-QA benchmark
+- 🔍 **Real-time Search** - Support for searching by model name or organization
+- 📊 **Multi-dimensional Sorting** - Support for sorting by score, date, model name, organization
+- 📈 **Statistical Information** - Display total models, average score, top score, participating organizations
+- 🎨 **Modern UI** - Responsive design supporting mobile and desktop
+- 📱 **Mobile Friendly** - Adaptive layout perfectly supporting various screen sizes
 
-## 项目结构
+## Project Structure
 
 ```
 leader board/
-├── index.html          # 主页面
-├── styles.css          # 样式文件
-├── script.js           # JavaScript逻辑
-├── data.json           # 数据文件
-├── config.json         # 配置文件
-├── package.json        # 项目配置
-└── README.md           # 说明文档
+├── index.html          # Main page
+├── styles.css          # Style files
+├── script.js           # JavaScript logic
+├── data.json           # Data file
+├── config.json         # Configuration file
+├── package.json        # Project configuration
+└── README.md           # Documentation
 ```
 
-## 快速开始
+## Quick Start
 
-### 方法1：直接打开
+### Method 1: Direct Open
 ```bash
-# 在浏览器中直接打开 index.html
+# Open index.html directly in browser
 open index.html
 ```
 
-### 方法2：本地服务器
+### Method 2: Local Server
 ```bash
-# 使用Python启动本地服务器
+# Start local server with Python
 python -m http.server 8000
 
-# 或使用Node.js
+# Or use Node.js
 npx http-server -p 8000
 
-# 或使用live-server（支持热重载）
+# Or use live-server (with hot reload)
 npx live-server --port=8000
 ```
 
-### 方法3：使用npm脚本
+### Method 3: Using npm scripts
 ```bash
-# 安装依赖
+# Install dependencies
 npm install
 
-# 启动开发服务器
+# Start development server
 npm run dev
 
-# 或启动静态服务器
+# Or start static server
 npm run serve
 ```
 
-## 数据格式
+## Data Format
 
-数据文件 `data.json` 格式：
+Data file `data.json` format:
 ```json
 [
   {
     "model": "GPT-4o",
     "score": 95.8,
     "org": "OpenAI",
-    "date": "2024-05-13"
+    "date": "2024-05-13",
+    "category": "Commercial Tools"
   }
 ]
 ```
 
-## 自定义配置
+## Custom Configuration
 
-在 `config.json` 中可以配置：
-- 页面标题和描述
-- 默认排序方式
-- 列配置
-- 主题颜色
-- 其他设置
+In `config.json` you can configure:
+- Page title and description
+- Default sorting method
+- Column configuration
+- Theme colors
+- Other settings
 
-## 添加新数据
+## Adding New Data
 
-1. 编辑 `data.json` 文件
-2. 添加新的模型数据
-3. 刷新页面即可看到更新
+1. Edit the `data.json` file
+2. Add new model data
+3. Refresh the page to see updates
 
-## 部署
+## Deployment
 
 ### GitHub Pages
-1. 将项目推送到GitHub仓库
-2. 在仓库设置中启用GitHub Pages
-3. 选择主分支作为源
+1. Push the project to a GitHub repository
+2. Enable GitHub Pages in repository settings
+3. Select main branch as source
 
-### 其他静态托管
+### Other Static Hosting
 - Netlify
 - Vercel
-- 任何支持静态文件的托管服务
+- Any static file hosting service
 
-## 浏览器支持
+## Browser Support
 
 - Chrome 60+
 - Firefox 55+
 - Safari 12+
 - Edge 79+
 
-## 技术栈
+## Tech Stack
 
 - HTML5
 - CSS3 (Flexbox, Grid)
 - Vanilla JavaScript (ES6+)
-- JSON数据格式
+- JSON data format
 
-## 许可证
+## License
 
 MIT License
 
-## 贡献
+## Contributing
 
-欢迎提交Issue和Pull Request！
+Issues and Pull Requests are welcome!
 
-## 更新日志
+## Changelog
 
 ### v1.0.0
-- 初始版本发布
-- 基础排行榜功能
-- 搜索和排序功能
-- 响应式设计
+- Initial version release
+- Basic leaderboard functionality
+- Search and sorting features
+- Responsive design

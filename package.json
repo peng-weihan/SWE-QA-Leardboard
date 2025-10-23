@@ -1,7 +1,7 @@
 {
-  "name": "ai-leaderboard",
+  "name": "swe-qa-leaderboard",
   "version": "1.0.0",
-  "description": "AI模型性能排行榜",
+  "description": "SWE-QA Software Engineering Question Answering 排行榜",
   "main": "index.html",
   "scripts": {
     "start": "python -m http.server 8000",

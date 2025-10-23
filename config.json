@@ -1,6 +1,6 @@
 {
-  "title": "AI Model Benchmark Leaderboard",
-  "description": "AI模型性能排行榜",
+  "title": "SWE-QA Benchmark Leaderboard",
+  "description": "Software Engineering Question Answering 排行榜",
   "version": "1.0.0",
   "author": "Your Name",
   "settings": {

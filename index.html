@@ -3,14 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Model Benchmark Leaderboard</title>
+    <title>SWE-QA Benchmark Leaderboard</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>🏆 Benchmark Leaderboard</h1>
-            <p>AI模型性能排行榜</p>
+            <h1>🏆 SWE-QA Benchmark Leaderboard</h1>
+            <p>Software Engineering Question Answering 排行榜</p>
+        </div>
+
+        <div class="description">
+            <div class="description-content">
+                <h2>关于SWE-QA Benchmark</h2>
+                <p>理解和推理整个软件仓库是智能软件工程工具的基本能力。虽然现有的基准测试如CoSQA和CodeQA已经推进了该领域的发展，但它们主要关注小的、自包含的代码片段。这些设置无法捕捉真实世界仓库的复杂性，其中有效的理解和推理通常需要导航多个文件、理解软件架构，并在长距离代码依赖中建立答案基础。</p>
+                
+                <p>SWE-QA是一个仓库级代码问答基准测试，旨在促进在真实代码环境中自动化问答系统的研究。SWE-QA包含576个高质量的问题-答案对，涵盖多样化的类别，包括意图理解、跨文件推理和多跳依赖分析。</p>
+                
+                <p>该基准测试基于从11个流行仓库的77,100个GitHub问题中提取的自然开发者问题构建，涵盖以下Python库：</p>
+                <div class="libraries">
+                    <span class="library-tag">astropy</span>
+                    <span class="library-tag">django</span>
+                    <span class="library-tag">flask</span>
+                    <span class="library-tag">matplotlib</span>
+                    <span class="library-tag">pylint</span>
+                    <span class="library-tag">pytest</span>
+                    <span class="library-tag">requests</span>
+                    <span class="library-tag">scikit-learn</span>
+                    <span class="library-tag">sphinx</span>
+                    <span class="library-tag">sqlfluff</span>
+                    <span class="library-tag">xarray</span>
+                    <span class="library-tag">sympy</span>
+                </div>
+                
+                <p>每个问题都经过精心设计，测试模型对软件工程概念、API使用、架构设计等方面的理解能力，特别强调跨文件推理和仓库级理解。</p>
+                <div class="links">
+                    <a href="https://huggingface.co/datasets/swe-qa/SWE-QA-Benchmark" target="_blank" class="link-btn">📊 数据集</a>
+                    <a href="https://arxiv.org/abs/2509.14635" target="_blank" class="link-btn">📄 论文</a>
+                </div>
+            </div>
         </div>
 
         <div class="controls">
@@ -39,7 +70,8 @@
                         <tr>
                             <th class="sortable" data-column="rank">排名</th>
                             <th class="sortable" data-column="model">模型</th>
-                            <th class="sortable" data-column="score">分数</th>
+                            <th class="sortable" data-column="score">总分</th>
+                            <th class="sortable" data-column="category">类别</th>
                             <th class="sortable" data-column="org">组织</th>
                             <th class="sortable" data-column="date">日期</th>
                         </tr>
@@ -67,6 +99,10 @@
             <div class="stat-card">
                 <div class="stat-number" id="totalOrgs">0</div>
                 <div class="stat-label">参与组织</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="totalCategories">0</div>
+                <div class="stat-label">模型类别</div>
             </div>
         </div>
     </div>

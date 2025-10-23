@@ -149,6 +149,7 @@ class Leaderboard {
                 <td class="rank">${medal} ${rank}</td>
                 <td class="model-name">${item.model}</td>
                 <td class="score">${item.score.toFixed(1)}</td>
+                <td class="category">${item.category || 'N/A'}</td>
                 <td class="org">${item.org}</td>
                 <td class="date">${item.date}</td>
             `;
@@ -171,11 +172,13 @@ class Leaderboard {
             (this.currentData.reduce((sum, item) => sum + item.score, 0) / this.currentData.length).toFixed(1) : 0;
         const topScore = this.currentData.length > 0 ? Math.max(...this.currentData.map(item => item.score)) : 0;
         const totalOrgs = new Set(this.currentData.map(item => item.org)).size;
+        const totalCategories = new Set(this.currentData.map(item => item.category)).size;
 
         this.updateElement('totalModels', totalModels);
         this.updateElement('avgScore', avgScore);
         this.updateElement('topScore', topScore.toFixed(1));
         this.updateElement('totalOrgs', totalOrgs);
+        this.updateElement('totalCategories', totalCategories);
     }
 
     updateElement(id, value) {
